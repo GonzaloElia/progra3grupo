@@ -1,9 +1,10 @@
 import React from 'react'
+import Canciones from './components/Canciones/Canciones';
 
 function App() {
   return (
     <div>
-      <h1> Hola gente </h1>
+      <Canciones/>
     </div>
   );
 }
