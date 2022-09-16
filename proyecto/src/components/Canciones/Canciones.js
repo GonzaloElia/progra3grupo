@@ -15,7 +15,7 @@ import Cancion from "../Cancion/Cancion"
         .then(res => res.json())
         .then(data => this.setState(
           {
-            tracks: data.tracks.data.slice(0, 4),
+            tracks: data.tracks.data.slice(0, 4)
           }
         ))
         .catch(error => console.log(error))
