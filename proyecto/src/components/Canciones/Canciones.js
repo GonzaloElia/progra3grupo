@@ -27,9 +27,9 @@ import Cancion from "../Cancion/Cancion"
       <section className='card-container'>
         
         {
-         this.state.tracks.length > 0 ?
+         this.state.tracks.length ?
             this.state.tracks.map((track, idx) => 
-            <Cancion key={track + idx} info={track} //borrar={(name) => this.borrar(name)}
+            <Cancion key={track   + idx } info={track } //borrar={(name) => this.borrar(name)}
             />)
           :
           <h1>Cargando..</h1>
