@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Cancion from "../Cancion/Cancion"
+import './styles.css'
 
  class Canciones extends Component {
 
@@ -23,18 +24,21 @@ import Cancion from "../Cancion/Cancion"
     }
   render() {
     return (
-      
-      <section className='card-container'>
-        {
-          this.state.tracks.length > 0 ?
-            this.state.tracks.map((track, idx) => 
-            <Cancion key={track + idx} info={track} //borrar={(name) => this.borrar(name)}
-            />)
-          :
-          <h1>Cargando..</h1>
-        }
-        
-      </section>
+      <div className='listado'>
+
+        <h1>Canciones Populares</h1> 
+        <section className='card-container'>
+          {
+            this.state.tracks.length > 0 ?
+              this.state.tracks.map((track, idx) => 
+              <Cancion key={track + idx} info={track} //borrar={(name) => this.borrar(name)}
+              />)
+            :
+            <h1>Cargando..</h1>
+          }
+          
+        </section>
+      </div>
       
     )
   }

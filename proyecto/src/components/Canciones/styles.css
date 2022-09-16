@@ -1,0 +1,19 @@
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   }
+   
+   .listado{
+       margin-top: 2%;
+       margin-bottom: 2%;
+   }
+   
+   .listado h1{
+       text-align: center;
+       margin-bottom: 2.5%;
+   }
+   .listado h3{
+       text-align: center;
+       margin-bottom: 2.5%;
+   }

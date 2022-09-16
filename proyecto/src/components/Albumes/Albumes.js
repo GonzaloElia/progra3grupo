@@ -24,18 +24,19 @@ import Album from "../Album/Album"
   render() {
     return (
       
-    
-      <section className='card-container'>
-        {
-          this.state.albums.length > 0 ?
-            this.state.albums.map((album, idx) => 
-            <Album key={album + idx} info={album} //borrar={(name) => this.borrar(name)}
-            />)
-          :
-          <h1>Cargando..</h1>
-        }
-      </section>
-
+    <div className='listado'>
+        <h1>Albumes Populares</h1>
+        <section className='card-container'>
+            {
+            this.state.albums.length > 0 ?
+                this.state.albums.map((album, idx) => 
+                <Album key={album + idx} info={album} //borrar={(name) => this.borrar(name)}
+                />)
+            :
+            <h1>Cargando..</h1>
+            }
+        </section>
+    </div>
     )
   }
 }
