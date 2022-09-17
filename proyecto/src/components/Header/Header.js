@@ -12,9 +12,9 @@ function Header(){
             <nav className="menu">
                 <ul className= "opciones">          
                     <li> <Link to = "/" > Inicio </Link> </li>
-                    <li> <Link to = "/" > Favoritos </Link> </li>   
-                    <li> <Link to = "/" > Canciones </Link> </li>    
-                    <li> <Link to = "/" > Albumes </Link> </li>   
+                    <li> <Link to = "/favorites" > Favoritos </Link> </li>   
+                    <li> <Link to = "/canciones" > Canciones </Link> </li>    
+                    <li> <Link to = "/albumes" > Albumes </Link> </li>   
                </ul> 
             </nav>
             <h2 className="fraseheader">¡El lugar donde encontraras la mejor música!</h2>  

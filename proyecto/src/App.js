@@ -1,10 +1,13 @@
 import React from 'react'
 
-import Header from './components/Header/index.js';
-import Footer from './components/Footer/index.js'
+import Header from './components/Header/Header.js';
+import Footer from './components/Footer/index.js';
 
-import Canciones from './components/Canciones/Canciones';
-import Albumes from './components/Albumes/Albumes';
+//importamos todas las sreens
+import Home from './screen/Home/Home.js';
+import Favorites from './screen/Favorites/Favorites.js';
+import Detalle from './screen/Detalle/Detalle.js';
+
 import { Route, Switch } from "react-router-dom"
 import TodasCanciones from './components/TodasCanciones/TodasCanciones.js';
 
@@ -12,14 +15,14 @@ function App() {
   return (
     <div>
       <Header />
-      
-      <Canciones />
-      <Albumes />
-
+            
       <Switch>
       <Route path = "/canciones" component={TodasCanciones} />
-      </Switch>
+      <Route path = "/" exact= {true} component={Home} />
+      <Route path = "/detalle" component={Detalle} />
+      <Route path = "/favoritos" component={Favorites} />
 
+      </Switch>
 
       <Footer />
     </div>
