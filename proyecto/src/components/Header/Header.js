@@ -7,8 +7,7 @@ function Header(){
     return(
         
         <header className="encabezado">
-            <img className="logo" src="/img/logo.png" alt="Logo Monkey Music" /> 
-            
+            <Link to = "/" ><img className="logo" src="/img/logo.png" alt="Logo Monkey Music"/> </Link>
             <nav className="menu">
                 <ul className= "opciones">          
                     <li> <Link to = "/" > Inicio </Link> </li>

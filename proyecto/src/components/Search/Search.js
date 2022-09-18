@@ -3,18 +3,20 @@ import React, {Component} from 'react'
 class Search extends Component {
     constructor(props){
         super(props)
-        this.state={
+        this.state= {
             valor:''
         }
     }
-    
+
     evitarSubmit(event){
         event.preventDefault()
+        console.log(event)
     }
 
-    controlarCambios(event){
+    controlarCambios(e){
         this.setState({
-            valor: event.target.value
+            valor: e.target.value
+        
         },
         () => this.props.filtrar(this.state.valor)
         )
@@ -22,10 +24,11 @@ class Search extends Component {
 
     render(){
         return(
-            <form onSubmit={(evento)=> this.evitarSubmit(evento) }>
-                <input type='text' onChange={(evento) => this.controlarCambios(evento)} value={this.state.valor}/>
+            <form onSubmit={(e)=> this.evitarSubmit(e) } >
+                <input type='text' onChange={(e) => this.controlarCambios(e)} value={this.state.valor} />
             </form>
         )
     }
 }
+
 export default Search
