@@ -5,7 +5,7 @@ import Footer from './components/Footer/index.js';
 
 //importamos todas las sreens
 import Home from './screen/Home/Home.js';
-import Favorites from './screen/Favorites/Favorites.js';
+import Favorites from './screen/favorites/Favorites.js';
 import Detalle from './screen/Detalle/Detalle.js';
 
 import { Route, Switch } from "react-router-dom"
@@ -15,8 +15,9 @@ function App() {
   return (
     <div>
       <Header />
-            
+      
       <Switch>
+        
       <Route path = "/canciones" component={TodasCanciones} />
       <Route path = "/" exact= {true} component={Home} />
       <Route path = "/detalle" component={Detalle} />

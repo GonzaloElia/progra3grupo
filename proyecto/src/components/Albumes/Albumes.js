@@ -16,6 +16,7 @@ import Album from "../Album/Album"
         .then(data => this.setState(
           {
             albums: data.albums.data.slice(0, 4),
+            mode: 'no-cors'
           }
         ))
         .catch(error => console.log(error))

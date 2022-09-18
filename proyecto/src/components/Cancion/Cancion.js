@@ -58,7 +58,7 @@ class cancion extends Component {
   render() {
     return (
       <div className="character-card">
-        <img src={this.props.info.album.cover}/>
+        <img src={this.props.info.album.cover}  alt=''/>
         <h3>{this.props.info.title}</h3>
         
         {
@@ -66,7 +66,8 @@ class cancion extends Component {
           <p>Album: {this.props.info.album.title}</p>
           :
           ''
-        }
+          }
+
         {
           this.state.favorite ?
             <button onClick={()=> this.removeFavorites(this.props.info.id)}>Sacar de favoritos</button>
@@ -75,7 +76,7 @@ class cancion extends Component {
         }
         
         <button onClick={()=>this.more()}>Ver Más</button>
-        
+        <button onClick={()=> this.props.borrar(this.props.info.id)}> Borrar </button>
       </div>
     )
   }
