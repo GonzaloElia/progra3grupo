@@ -20,7 +20,7 @@
     width: 200px;
 }
 .encabezado{
-    background-color: black;
+    background-color: #263238;
     display: flex;
     flex-wrap: wrap;
 }

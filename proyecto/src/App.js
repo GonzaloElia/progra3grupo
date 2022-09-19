@@ -2,6 +2,7 @@ import React from 'react'
 
 import Header from './components/Header/Header.js';
 import Footer from './components/Footer/index.js';
+import { Navbar } from 'react-bootstrap';
 
 //importamos todas las sreens
 import Home from './screen/Home/Home.js';

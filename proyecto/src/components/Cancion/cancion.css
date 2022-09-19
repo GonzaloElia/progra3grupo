@@ -13,18 +13,26 @@
 
 .character-card{
     color: #777;
-    font-size: 15px;
+    align-items: center;
     padding: 4px;
     margin-bottom: 7px;
-    width: 24%;
+    width: 20%;
     background: #fff;
     border-radius: 5px;
     box-shadow: 0 .15rem 1.75rem 0 rgba(64, 65, 74, 0.15);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .character-card img{
-    width: 100%;
+     margin: auto;
+    border: 3px solid #263238;
+    padding: 10px; 
+    width: 60%;
     margin-bottom: 20px; 
+    
 }
+
 .character-card:hover,
 .active{
 box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
@@ -54,3 +62,21 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 .hide{
     display: none;
 }
+
+.btn{
+    font-size: 5px;
+}
+.btn:hover {
+    background: #2079b0;
+    background-image: -webkit-linear-gradient(top, #fbbe28, #f5b402);
+    background-image: -moz-linear-gradient(top, #fbbe28, #f5b402);
+    background-image: -ms-linear-gradient(top, #fbbe28, #f5b402);
+    background-image: -o-linear-gradient(top, #fbbe28, #f5b402);
+    background-image: linear-gradient(to bottom, #fbbe28, #f5b402);
+    text-decoration: none;
+    
+  }
+
+  .nombre{
+    font-size: 15px;
+  }

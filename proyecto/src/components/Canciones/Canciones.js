@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Cancion from "../Cancion/Cancion"
 import './styles.css'
 import Search from '../Search/Search'
-
  class Canciones extends Component {
 
     constructor(props) {
@@ -17,7 +16,6 @@ import Search from '../Search/Search'
     componentDidMount(){
         fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart')
         .then(res => res.json())
-        
         .then(data => this.setState(
           {
             tracks: data.tracks.data.slice(0, 4),
@@ -47,8 +45,9 @@ import Search from '../Search/Search'
     return (
       <div className='listado'>
         <h1>Canciones Populares</h1> 
-        <section className='card-container'>
-          <Search filtrar={(nombre)=> this.buscarCanciones(nombre)}/>
+        <Search filtrar={(nombre)=> this.buscarCanciones(nombre)}/>
+
+        <section  className='card-container'>
           {
             this.state.tracks.length > 0 ?
               this.state.tracks.map((key, idx) => 

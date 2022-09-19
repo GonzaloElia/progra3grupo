@@ -1,9 +1,10 @@
 import React from 'react'
+import './Footer.css'
 
 function Footer() {
   return (
     <footer>
-        <p>©Todos los derechos reservados a Flores Pueyo Valentín, Galvez Gerónimo y Elia Gonzalo</p>
+        <p>©Sitio web desarrollado por: Flores Pueyo Valentín, Galvez Gerónimo y Elia Gonzalo</p>
     </footer>
   )
 }
