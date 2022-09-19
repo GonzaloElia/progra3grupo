@@ -12,7 +12,7 @@ function Header(){
             <nav className="menu">
                 <ul className= "opciones">          
                     <li> <Link to = "/" > Inicio </Link> </li>
-                    <li> <Link to = "/favorites" > Favoritos </Link> </li>   
+                    <li> <Link to = "/favoritos" > Favoritos </Link> </li>   
                     <li> <Link to = "/canciones" > Canciones </Link> </li>    
                     <li> <Link to = "/albumes" > Albumes </Link> </li>   
                </ul> 
