@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Form } from 'react-bootstrap'
 
 class Search extends Component{
     constructor (props){
@@ -24,10 +25,10 @@ class Search extends Component{
 
     render(){
         return(
-         <form onSubmit={(e)=> this.evitarSubmit(e)}   >
-            <input type='text' onChange={(e)=> this.controlarCambios(e) } value={this.state.valor} />
+         <Form color='black' onSubmit={(e)=> this.evitarSubmit(e)}   >
+            <Form.Control placeholder='Buscar...' type='text' onChange={(e)=> this.controlarCambios(e) } value={this.state.valor} />
             
-         </form>
+         </Form>
         )
     }
 }

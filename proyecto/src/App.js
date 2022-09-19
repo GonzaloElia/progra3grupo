@@ -2,10 +2,11 @@ import React from 'react'
 
 import Header from './components/Header/Header.js';
 import Footer from './components/Footer/index.js';
+import { Navbar } from 'react-bootstrap';
 
 //importamos todas las sreens
 import Home from './screen/Home/Home.js';
-import Favorites from './screen/favorites/Favorites.js';
+import Favorites from './screen/Favorites/Favorites.js';
 import Detalle from './screen/Detalle/Detalle.js';
 
 import { Route, Switch } from "react-router-dom"

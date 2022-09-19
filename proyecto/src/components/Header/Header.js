@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import './styles.css'
-
+import { Navbar } from 'react-bootstrap';
 function Header(){
 
     return(
         
-        <header className="encabezado">
+        <Navbar className="encabezado">
             <img className="logo" src="/img/logo.png" alt="Logo Monkey Music" /> 
             
             <nav className="menu">
@@ -18,7 +18,7 @@ function Header(){
                </ul> 
             </nav>
             <h2 className="fraseheader">¡El lugar donde encontraras la mejor música!</h2>  
-        </header>
+        </Navbar>
     )
 }
 
