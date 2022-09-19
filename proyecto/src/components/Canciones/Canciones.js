@@ -46,13 +46,8 @@ import Search from '../Search/Search'
       <div className='listado'>
         <h1>Canciones Populares</h1> 
         <Search filtrar={(nombre)=> this.buscarCanciones(nombre)}/>
-<<<<<<< HEAD
-        <section className='card-container'>
-          
-=======
 
         <section  className='card-container'>
->>>>>>> 60d6c9adb567e498848314dba2743999302ed06b
           {
             this.state.tracks.length > 0 ?
               this.state.tracks.map((key, idx) => 

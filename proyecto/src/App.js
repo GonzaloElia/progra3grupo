@@ -2,20 +2,17 @@ import React from 'react'
 
 import Header from './components/Header/Header.js';
 import Footer from './components/Footer/index.js';
-import { Navbar } from 'react-bootstrap';
 
 //importamos todas las sreens
-import Home from './screen/Home/Home.js';
+import Home from './screen/Home/home.js';
 import Favorites from './screen/Favorites/Favorites.js';
-<<<<<<< HEAD
-=======
-import Detalle from './screen/Detalle/Detalle.js';
->>>>>>> 60d6c9adb567e498848314dba2743999302ed06b
 
 import { Route, Switch } from "react-router-dom"
 import TodasCanciones from './components/TodasCanciones/TodasCanciones.js';
 import TodosAlbumes from './components/TodosAlbumes/TodosAlbumes.js';
-import Detalle from './components/Detalle/Detalle.js';
+import DetalleCancion from './components/DetalleCancion/DetalleCancion.js';
+import DetalleAlbum from './components/DetalleAlbum/DetalleAlbum.js';
+
 
 function App() {
   return (
@@ -27,9 +24,10 @@ function App() {
       <Route path = "/canciones" component={TodasCanciones} />
       <Route path = "/albumes" component={TodosAlbumes} />
       <Route path = "/" exact= {true} component={Home} />
-      <Route path = "/detalle" component={Detalle} />
       <Route path = "/favoritos" component={Favorites} />
-      <Route path= "/detalle/:id" component={Detalle} />
+      <Route path= "/detallecancion/:id" component={DetalleCancion} />
+      <Route path= "/detallealbum/:id" component={DetalleAlbum} />
+
 
       </Switch>
 
