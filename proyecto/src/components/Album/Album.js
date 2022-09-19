@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
 import '../Cancion/cancion.css'
+import { Link } from 'react-router-dom';
+
 
 class album extends Component {
 
@@ -57,10 +58,12 @@ class album extends Component {
   }
   render() {
     return (
-      <div className="character-card">
-        <img src={this.props.info.cover} alt= ''/>
-        <div><h3 className='nombre'>{this.props.info.title}</h3>
-        
+      <div className='character-card'>
+         <img src={this.props.info.cover} alt="" />
+        <Link to={`/detallealbum/${this.props.info.id}`} >
+          <h4 className='nombre'>{this.props.info.title}</h4>
+          <p className={this.state.verMas}>{this.props.info.title}</p></Link>
+        <div>
         {
           this.state.more ?
           <p> Album: {this.props.info.title}</p>

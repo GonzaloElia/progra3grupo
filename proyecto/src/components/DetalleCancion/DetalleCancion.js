@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import "../Detalle/Detalle.css"
 
-class Detalle extends Component {
+class DetalleCancion extends Component {
 
     constructor(props) {
         super(props)
@@ -18,7 +17,6 @@ class Detalle extends Component {
             .then(data => this.setState({
                 track: data,
                 
-            
             }))
             .catch(err => console.log(err))
             
@@ -26,14 +24,13 @@ class Detalle extends Component {
 
 
     render() {
-        console.log(this.state.track);
-
         return (
             <div>
                <h1>{this.state.track.title}</h1>
-               {/* <img src={this.state.track.album.cover} alt="" /> */}
-               <h3>Duration: {this.state.track.duration}</h3>
-               <h3>Artist: {this.state.track.artist.name}</h3> 
+               {/* <img src={this.state.track[0].album.cover} alt="" /> */}
+               <h3>Duracion de la cancion: {this.state.track.duration} segundos</h3>
+               <h3>Ranking Historico: {this.state.track.rank}</h3>
+                <iframe src={this.state.track.preview} width="100%" height="260px" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
                {/* <h3>Album: {this.state.track.album.title}</h3> */}
                
              
@@ -42,4 +39,4 @@ class Detalle extends Component {
     }
 }
 
-export default Detalle
+export default DetalleCancion

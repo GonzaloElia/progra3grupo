@@ -23,10 +23,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: auto;
 }
 .character-card img{
      margin: auto;
-    border: 3px solid #263238;
+    border: 3px solid #2632;
     padding: 10px; 
     width: 60%;
     margin-bottom: 20px; 
