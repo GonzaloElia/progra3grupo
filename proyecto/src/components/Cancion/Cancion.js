@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './cancion.css'
 
+
 class cancion extends Component {
 
     constructor(props) {
@@ -58,7 +59,8 @@ class cancion extends Component {
     return (
       <div className="character-card">
         <img src={this.props.info.album.cover}  alt=''/>
-        <h3>{this.props.info.title}</h3>
+        <div>
+        <h3 className='nombre'>{this.props.info.title}</h3>
         
         {
           this.state.more ?
@@ -69,13 +71,14 @@ class cancion extends Component {
 
         {
           this.state.favorite ?
-            <button onClick={()=> this.removeFavorites(this.props.info.id)}>Sacar de favoritos</button>
+            <button className='btn' onClick={()=> this.removeFavorites(this.props.info.id)}>Sacar de favoritos</button >
           :
-            <button onClick={()=> this.addFavorites(this.props.info.id)}>Añadir a favoritos</button>
+            <button className='btn' onClick={()=> this.addFavorites(this.props.info.id)}>Añadir a favoritos</button >
         }
+         <button className='btn' onClick={()=>this.more()}>Ver Más</button >
+       
         
-        <button onClick={()=>this.more()}>Ver Más</button>
-        <button onClick={()=> this.props.borrar(this.props.info.id)}> Borrar </button>
+      </div>
       </div>
     )
   }
