@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Cancion from "../Cancion/Cancion"
 import './styles.css'
-import Filtro from "../Filtro/Filtro"
 import Search from '../Search/Search'
 
  class Canciones extends Component {
@@ -13,9 +12,12 @@ import Search from '../Search/Search'
         }
     }
 
+    
+
     componentDidMount(){
         fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart')
         .then(res => res.json())
+        
         .then(data => this.setState(
           {
             tracks: data.tracks.data.slice(0, 4),
@@ -24,48 +26,37 @@ import Search from '../Search/Search'
         ))
         .catch(error => console.log(error))
     }
+
     
-    componentDidUpdate(){
-    }
 
-    borrar(title){
-      let tracksFiltrado = this.state.tracks.filter(tracks => tracks.title !== title)
-      this.setState({
-          tracks: tracksFiltrado
-      })
-
-  }
-    buscarTracks(nombre){
-      fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/tracks/?title=${nombre}`)
-      .then(resp => resp.json())
-      .then(data => this.setState({
+    // borrar(name){
+    //   let cancionesFiltradas = this.state.tracks.data.filter(cancion => cancion.name  !== name)
+    //   this.setState({
+    //     tracks: cancionesFiltradas
+    //   })
+    // }
+    buscarCanciones(nombre){
+      fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/search?q=${nombre}`)
+      .then(resp=>resp.json())
+      .then(data=> this.setState({
         tracks: data.data
       }))
-      .catch(err => console.log(err))
+      .catch(err=>console.log(err))
     }
-
-    filtrarTracks(nombre){
-      let arrayFiltrado = 
-      this.state.backup.filter
-      (track => track.title.toLowerCase().includes(nombre.toLowerCase()))
-
-      this.setState({
-          tracks: arrayFiltrado
-      })
-  }
-  
   render() {
     return (
-      
       <div className='listado'>
-        
-        <Filtro filtro={(nombre)=> this.filtrarTracks(nombre)} />
         <h1>Canciones Populares</h1> 
+        <Search filtrar={(nombre)=> this.buscarCanciones(nombre)}/>
         <section className='card-container'>
+          
           {
             this.state.tracks.length > 0 ?
-              this.state.tracks.map((track, idx) => 
-              <Cancion key={track + idx} info={track} //borrar={(name) => this.borrar(name)}
+              this.state.tracks.map((key, idx) => 
+              <Cancion
+               key={key + idx}
+               info={key} 
+               id={key.id}
               />)
             :
             <h1>Cargando..</h1>
