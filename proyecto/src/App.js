@@ -5,7 +5,7 @@ import Footer from './components/Footer/index.js';
 import { Navbar } from 'react-bootstrap';
 
 //importamos todas las sreens
-import Home from './screen/Home/Home.js';
+import Home from './screen/Home/home.js';
 import Favorites from './screen/Favorites/Favorites.js';
 import Detalle from './screen/Detalle/Detalle.js';
 

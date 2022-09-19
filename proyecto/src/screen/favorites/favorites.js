@@ -21,7 +21,6 @@ class Favorites extends Component {
             return (
             <div>
                 <h2>Lista de favoritos</h2>
-
             </div>
             )
         }
