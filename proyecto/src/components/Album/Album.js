@@ -25,17 +25,17 @@ class album extends Component {
   }
   
   addFavorites(id){
-    let favStorage = localStorage.getItem('favoritos')
+    let favStorage = localStorage.getItem('Albumsfavoritos')
 
     if(favStorage === null){
       let favArr = [id]
       let arrToString = JSON.stringify(favArr)
-      localStorage.setItem('favoritos', arrToString)
+      localStorage.setItem('Albumsfavoritos', arrToString)
     } else {
       let parsedArr = JSON.parse(favStorage)
       parsedArr.push(id)
       let arrToString = JSON.stringify(parsedArr)
-      localStorage.setItem('favoritos', arrToString)
+      localStorage.setItem('Albumsfavoritos', arrToString)
     }
     this.setState({
       favorite: true
@@ -43,13 +43,13 @@ class album extends Component {
   }
 
   removeFavorites(id){
-    let favStorage = localStorage.getItem('favoritos')
+    let favStorage = localStorage.getItem('Albumsfavoritos')
     let parsedStorage = JSON.parse(favStorage)
     let filterStorage = parsedStorage.filter(elm => elm !== id)
 
     let storageToString = JSON.stringify(filterStorage)
 
-    localStorage.setItem('favoritos', storageToString)
+    localStorage.setItem('Albumsfavoritos', storageToString)
 
     this.setState({
       favorite: false
@@ -63,18 +63,20 @@ class album extends Component {
         
         {
           this.state.more ?
-          <p>Album: {this.props.info.title}</p>
+          <p> Album: {this.props.info.title}</p>
           :
           ''
         }
         {
+          this.props.isInFavs ?
+          <button onClick={()=> this.props.borrar(this.props.info.id)}> Borrar de favoritos </button>
+          :
           this.state.favorite ?
             <button className='btn' onClick={()=> this.removeFavorites(this.props.info.id)}>Sacar de favoritos</button>
           :
             <button className='btn' onClick={()=> this.addFavorites(this.props.info.id)}>Añadir a favoritos</button>
         }
-        
-        <button className='btn'onClick={()=>this.more()}>Ver Más</button>
+            <button className='btn' onClick={()=>this.more()}>Ver Más</button>
         </div>
       </div>
     )

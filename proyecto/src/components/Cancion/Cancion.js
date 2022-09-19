@@ -26,17 +26,17 @@ class cancion extends Component {
   }
   
   addFavorites(id){
-    let favStorage = localStorage.getItem('favoritos')
+    let favStorage = localStorage.getItem('tracksfavs')
 
     if(favStorage === null){
       let favArr = [id]
       let arrToString = JSON.stringify(favArr)
-      localStorage.setItem('favoritos', arrToString)
+      localStorage.setItem('tracksfavs', arrToString)
     } else {
       let parsedArr = JSON.parse(favStorage)
       parsedArr.push(id)
       let arrToString = JSON.stringify(parsedArr)
-      localStorage.setItem('favoritos', arrToString)
+      localStorage.setItem('tracksfavs', arrToString)
     }
     this.setState({
       favorite: true
@@ -44,13 +44,13 @@ class cancion extends Component {
   }
 
   removeFavorites(id){
-    let favStorage = localStorage.getItem('favoritos')
+    let favStorage = localStorage.getItem('tracksfavs')
     let parsedStorage = JSON.parse(favStorage)
     let filterStorage = parsedStorage.filter(elm => elm !== id)
 
     let storageToString = JSON.stringify(filterStorage)
 
-    localStorage.setItem('favoritos', storageToString)
+    localStorage.setItem('tracksfavs', storageToString)
 
     this.setState({
       favorite: false
@@ -71,12 +71,16 @@ class cancion extends Component {
           }
 
         {
+          this.props.isInFavs ?
+          <button onClick={()=> this.props.borrar(this.props.info.id)}> Borrar de favoritos </button>
+          : 
           this.state.favorite ?
             <button className='btn' onClick={()=> this.removeFavorites(this.props.info.id)}>Sacar de favoritos</button >
           :
             <button className='btn' onClick={()=> this.addFavorites(this.props.info.id)}>Añadir a favoritos</button >
         }
-         <button className='btn' onClick={()=>this.more()}>Ver Más</button >
+            
+            <button className='btn' onClick={()=>this.more()}>Ver Más</button >
        
         
       </div>
