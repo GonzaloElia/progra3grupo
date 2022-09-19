@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './cancion.css'
+import { Link } from 'react-router-dom';
+
 
 
 class cancion extends Component {
@@ -58,9 +60,12 @@ class cancion extends Component {
   render() {
     return (
       <div className="character-card">
-        <img src={this.props.info.album.cover}  alt=''/>
+         <img src={this.props.info.album.cover} alt="" />
+        <Link to={`/detallecancion/${this.props.info.id}`} >
+          <h4 className='nombre'>{this.props.info.title}</h4>
+          <p className={this.state.verMas}>{this.props.info.album.title}</p> </Link>
+        
         <div>
-        <h3 className='nombre'>{this.props.info.title}</h3>
         
         {
           this.state.more ?
