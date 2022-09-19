@@ -54,7 +54,7 @@ class TracksFavs extends Component {
     render() {
             return (
             <div>
-        <h2> Tracks favoritos </h2>
+        <h2 className='titulo'> Tracks favoritos </h2>
         <section className="card-container">
         {
           this.state.tracksfavoritos.length > 0 ?

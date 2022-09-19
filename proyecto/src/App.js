@@ -7,7 +7,7 @@ import NotFoundPage from './components/NotFoundPage/NotFoundPage.js';
 //importamos todas las sreens
 import Home from './screen/home/home.js';
 import Favorites from './screen/Favorites/Favorites.js';
-import Detalle from './screen/detalle/detalle.js';
+//import Detalle from './screen/detalle/detalle.js';
 
 import { Route, Switch } from "react-router-dom"
 import TodasCanciones from './components/TodasCanciones/TodasCanciones.js';

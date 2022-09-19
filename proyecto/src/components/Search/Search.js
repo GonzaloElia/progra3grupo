@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { Form } from 'react-bootstrap'
 
-class Search extends Component{
+class Search extends Component {
     constructor (props){
         super(props)
         this.state={

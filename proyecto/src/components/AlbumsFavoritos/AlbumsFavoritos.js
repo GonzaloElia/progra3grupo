@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Album from '../../components/Album/Album';
+import estilos from "../AlbumsFavoritos/albumsfavoritos.css"
 
 class AlbumsFavoritos extends Component {
     constructor(props) {
@@ -54,7 +55,7 @@ class AlbumsFavoritos extends Component {
     render() {
             return (
             <div>
-        <h2> Albums favoritos </h2>
+        <h2 className='titulo'> Albums favoritos </h2>
         <section className="card-container">
         {
           this.state.Albumfavs.length > 0 ?
