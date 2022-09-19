@@ -24,3 +24,12 @@
     display: flex;
     flex-wrap: wrap;
 }
+p a:hover {
+    color: #fbbe28;
+    text-decoration: underline;
+}
+
+.p {
+    color: white;
+    font-size: 1.8rem; /* 1.8REM = 28.8px*/
+}

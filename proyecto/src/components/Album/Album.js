@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
 import '../Cancion/cancion.css'
 
 class album extends Component {

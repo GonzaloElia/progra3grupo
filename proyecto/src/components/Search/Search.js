@@ -26,7 +26,7 @@ class Search extends Component{
     render(){
         return(
          <Form color='black' onSubmit={(e)=> this.evitarSubmit(e)}   >
-            <Form.Control placeholder='Buscar...' type='text' onChange={(e)=> this.controlarCambios(e) } value={this.state.valor} />
+            <input  placeholder='Buscar...' type='text' onChange={(e)=> this.controlarCambios(e) } value={this.state.valor} />
             
          </Form>
         )
