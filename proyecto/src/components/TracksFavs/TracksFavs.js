@@ -5,8 +5,9 @@ class TracksFavs extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            tracksfavoritos: [] //necesitamos un array de objetos literales con cada uno de los tracks
-        }
+          tracksfavoritos: [], //necesitamos un array de objetos literales con cada uno de los tracks
+          favorito: true
+          }
     }
     
     componentDidMount() {
@@ -33,16 +34,18 @@ class TracksFavs extends Component {
     }
 
     borrar(id) {
+  
         let favStorage = localStorage.getItem('tracksfavs')
-        let parsedStorage = JSON.parse(favStorage) 
-        let filterStorage = parsedStorage.filter(elm => elm !== id) 
+        let parsedStorage = JSON.parse(favStorage)
+       
+        let filterStorage = parsedStorage.filter(elm => elm !== id) //[1 ,2 ,3 ,4 ,5] 
     
         let storageToString = JSON.stringify(filterStorage)
     
         localStorage.setItem('tracksfavs', storageToString)
     
         this.setState({
-          favorito: false})
+        favorito: false})
         
       let tracksBorrados = this.state.tracksfavoritos.filter(track => track.id !== id);
         this.setState({

@@ -69,22 +69,22 @@ class cancion extends Component {
         
         {
           this.state.more ?
-          <p>Album: {this.props.info.album.title}</p>
+          <p> Album: {this.props.info.album.title}</p>
           :
           ''
-          }
+        }
 
         {
           this.props.isInFavs ?
           <button onClick={()=> this.props.borrar(this.props.info.id)}> Borrar de favoritos </button>
           : 
           this.state.favorite ?
-            <button className='btn' onClick={()=> this.removeFavorites(this.props.info.id)}>Sacar de favoritos</button >
+          <button className='btn' onClick={()=> this.removeFavorites(this.props.info.id)}>Sacar de favoritos</button >
           :
-            <button className='btn' onClick={()=> this.addFavorites(this.props.info.id)}>Añadir a favoritos</button >
+          <button className='btn' onClick={()=> this.addFavorites(this.props.info.id)}>Añadir a favoritos</button >
         }
             
-            <button className='btn' onClick={()=>this.more()}>Ver Más</button >
+          <button className='btn' onClick={()=>this.more()}>Ver Más</button >
        
         
       </div>

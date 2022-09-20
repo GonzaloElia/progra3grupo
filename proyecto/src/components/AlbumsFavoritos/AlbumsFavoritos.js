@@ -6,7 +6,8 @@ class AlbumsFavoritos extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            Albumfavs: [] //necesitamos un array de objetos literales con cada uno de los personajes
+          Albumfavs: [], //necesitamos un array de objetos literales con cada uno de los personajes
+          favorito: true
         }
     }
     
